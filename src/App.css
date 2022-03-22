@@ -1,0 +1,511 @@
+.App {
+  text-align: center;
+}
+.hidden{
+  display:none;
+}
+.cursor-pointer:hover{
+  cursor: pointer;
+  color: #FDBC2D;
+  transition: 250ms ease-out
+}
+.display{
+  width: 60%;
+}
+.ply-name{
+  font-size: 1.5rem;
+}
+.container{
+display:flex;
+flex-direction:row;
+justify-content:space-around;
+align-items:center;
+margin-top:2rem;
+font-size:1.1rem;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+  box-sizing: border-box;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* CSS RESET ENDS */
+/* Background Options: */
+/* 20K-JZ2ppbE */
+/* UegcSdRtmlg */
+
+/*  */
+body{background: url('https://source.unsplash.com/UegcSdRtmlg/1950x1200') no-repeat center center fixed;
+  font-family: 'Lalezar', cursive;
+  font-size: 1.2rem;
+}
+
+.player-img{
+  width: 75%;
+}
+.mvp-container{
+  width: 100%;
+}
+.mvp-img{
+  height: auto;
+  max-width: 100%;
+}
+.landing-img{
+  width: 100%;
+  /* display: none; */
+}
+
+button{
+  /* width: 100%; */
+  max-width: 100%;
+  color:black;
+  background-color:  #FDBC2D;
+  border-radius: 5px;
+  font-family: 'Lalezar', cursive;
+  font-size: 1rem;
+  transition: 250ms ease-out 
+}
+button:hover{
+  cursor: pointer;
+  color:white;
+  background-color: black;
+}
+.player-default-color{
+  /* background-color: rgb(128,128,128,0.5); */
+  background-color: rgb(198, 207, 213,.8);
+}
+.player-selected{
+	background-color: rgb(23, 64, 139,.8);
+}
+.opponent-selected{
+	background-color:rgb(201, 8, 42,.8);
+}
+.dual-selection{
+  background: linear-gradient(to left, rgb(201, 8, 42,.8) 50%, rgb(23, 64, 139,.8) 50%);
+}
+.remove{
+	width: 50%;
+	display:block;
+	margin:auto;
+}
+
+.landing-players{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	/* align-items:center; */
+}
+.user-selection{
+display:flex;
+flex-direction:row;
+justify-content:center;
+/* align-items:space-around; */
+}
+.cpu-selection{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	/* align-items:space-between; */
+}
+.controls{
+	display:flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.team1-final{
+border: 1px solid black;
+border-radius: 1rem;
+background-color: rgb(23, 64, 139,.8);
+}
+.team2-final{
+  border: 1px solid black;
+  border-radius: 1rem;
+  background-color: rgb(201, 8, 42,.8);
+}
+/* .final-score{
+  font-size: 1.5rem;
+} */
+
+.winnerTitle{
+  font-size: 2rem;
+}
+
+.buttons{
+  display:flex;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: center;
+  font-size: 1rem;
+  /* width: 50%; */
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+.push-down{
+  margin-top: .5rem;
+}
+/* .mvp-img{
+  width: 60%;
+  border-radius: 5px;
+} */
+.title{
+  font-size: 1.3rem;
+}
+.ply-name{
+  font-size: 1.2rem;
+}
+
+/* Scoreboard */
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* .score-container{
+  position: relative;
+  top: 0;
+} */
+.scoreboard {
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  font-family: "Montserrat", "Arial";
+  color: white;
+  /* background-color: rgb(23, 64, 139,.8); */
+  /* margin-top: 2rem; */
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 100%; */
+  position: sticky;
+  top: 0;
+}
+
+.scoreboard > * {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white; 
+  border-right: 1px solid white; 
+  height: 50px; 
+  font-weight: bold; 
+  
+}
+
+.scoreboard > *:first-child {
+  border-left: 1px solid white;
+}
+
+.team {
+  display: flex;
+  flex-direction: row;
+  color: white; 
+}
+
+.team-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.team-detail {
+  padding: 0em 0.5em; 
+}
+
+.team-detail {
+  font-size: 1.5em; 
+}
+
+.team-detail .team-nameandscore {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+
+.team-detail .team-thisgame {
+  width: 150px; 
+  font-size: 0.5em; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  opacity: 0.8;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #222; 
+}
+
+.timer-container {
+  display: flex;
+  flex-direction: row; 
+}
+
+.timer-container > * {
+  border-right: 1px solid white; 
+  padding: 0em 1em; 
+  color: white;
+}
+
+.timer-container > *:last-child {
+  border-right: 0; 
+  color: yellow; 
+}
+
+.logo {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  padding: 0em 0.5em; 
+  background-color: black; 
+}
+
+.logo img {
+  width: 100px; 
+}
+
+/* Game */ 
+
+.houston {
+  background-color: steelblue; 
+}
+
+.dallas {
+  background-color: crimson;
+}
+
+
+/* Responsiveness */
+
+/* 320px — 480px: Mobile devices.
+481px — 768px: iPads, Tablets.
+769px — 1024px: Small screens, laptops.
+1025px — 1200px: Desktops, large screens.
+1201px and more — Extra large screens, TV. */
+
+@media (max-width: 769px){
+   h3{
+     font-size:.8rem ;
+   }
+
+  .button-shrink{
+    font-size: .8rem;
+  }
+  .title{
+  font-size: .9rem;
+  }
+  .ply-name{
+    font-size: 1rem;
+  }
+  .player-img{
+    width: 60%;
+  }
+}
+
+@media(max-width:460px){
+.scoreboard{
+flex-direction:column;
+}
+}
+
+@media(max-width: 445px){
+  .button-shrink{
+    font-size: .7rem;
+  }
+}
+@media(max-width: 423px){
+  .button-shrink{
+    font-size: .5rem;
+  } 
+  h3{
+    font-size:.55rem ;
+  }
+  h1{
+    font-size: 1rem;
+  }
+  p{
+    font-size: .6rem;
+  }
+}
+@media(max-width:320px){
+  .scoreboard{
+    flex-direction: column;
+  }
+  h3{
+    font-size:.53rem ;
+  }
+  h1{
+    font-size: 1rem;
+  }
+  p{
+    font-size: .6rem;
+  }
+  .button-shrink{
+    font-size: .6rem;
+    max-width: 80%;
+  }
+  .team1-final{
+    max-width: 50%;
+  }
+  .team2-final{
+  max-width: 50%;
+  }
+}
+
+@media(max-width:681px){
+  .rematch{
+    font-size: .85rem;
+  }
+  .ply-name{
+    font-size: 1rem;}
+
+    .stats{
+    font-size: .9rem;
+  }
+}
+@media (max-width:611px){
+  .scoreboard{
+    font-size: .8rem;
+  }
+  /* h3{
+    font-size:.53rem ;
+  }
+  h1{
+    font-size: 1rem;
+  }
+  p{
+    font-size: .6rem;
+  } */
+  .title{
+    font-size: .8rem;
+  }
+}
+@media (max-width:500px){
+  .scoreboard{
+    font-size: .65rem;
+  }
+  /* .sim-container{
+   display: none;
+  } */
+  .container{
+/* display:flex; */
+flex-direction:column;
+justify-content:space-evenly;
+/* align-items:center; */
+margin-top:2rem;
+font-size:1.1rem;
+  }
+}
+
+/* Basketball Animation */
+/* Credit for animations goes to: https://codepen.io/zajcus/pen/oLGLQV */
+.ball{
+position:relative;
+top:50px;
+width:100px;
+height:100px;
+background:#f57c33;
+border-radius:50px;
+overflow:hidden;
+border: 2px solid black;
+animation-name:bounce;
+animation-duration:1s;
+animation-iteration-count: infinite;
+animation-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000); 
+margin: auto;
+}
+.stroke{
+position:absolute;
+
+width:150px;
+height:150px;
+border-radius:80px;
+border: 2px solid black;
+
+}
+.stroke2{
+  position:absolute;
+ border: 2px solid black;
+width:300px;
+height:300px;
+border-radius:150px;
+
+}
+
+.pos1{
+right:60px;
+bottom:-25px;
+
+}
+.pos2{
+left:60px;
+bottom:-25px;
+
+}
+.pos3{
+top:-100px;
+left:48px
+
+}
+.pos4{
+top:48px;
+left:-100px;
+}
+@keyframes bounce {
+0%   {}
+10% {transform:scaleX(1);transform:scaleY(1);}
+50% {top:300px; transform:scaleX(1.7);transform:scaleY(0.5); }
+100% {top:50px;}
+}
+
+
+
