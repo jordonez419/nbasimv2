@@ -467,6 +467,12 @@ button:hover {
     font-size: .8rem;
   }
 
+  /* .query-button {
+    margin: auto;
+    font-size: .5rem;
+  } */
+
+
   .title {
     font-size: .9rem;
   }
@@ -480,10 +486,19 @@ button:hover {
   }
 }
 
+@media(max-width:595px) {
+  .query-button {
+    margin: auto;
+    font-size: .6rem;
+  }
+}
+
+
 @media(max-width:460px) {
   .scoreboard {
     flex-direction: column;
   }
+
 }
 
 @media(max-width: 445px) {
@@ -497,6 +512,10 @@ button:hover {
   .button-shrink {
     font-size: .5rem;
   }
+
+  /* .query-button {
+    margin: auto;
+  } */
 
   h3 {
     font-size: .55rem;
@@ -515,6 +534,10 @@ button:hover {
   .scoreboard {
     flex-direction: column;
   }
+
+  /* .query-button {
+    margin: auto;
+  } */
 
   h3 {
     font-size: .53rem;
@@ -543,6 +566,7 @@ button:hover {
 }
 
 @media(max-width:681px) {
+
   .rematch {
     font-size: .85rem;
   }
