@@ -12,6 +12,8 @@ const Players = (props) => {
 
   const { players, userSquad, setUserSquad, setOponentSquad, oponentSquad, setMvp, setCpuScore, setUserScore, userScore, cpuScore } = props;
 
+  const [searchTerm, setSearchTerm] = useState('')
+
 
   const simulateGame = () => {
     localStorage.clear()
@@ -110,6 +112,11 @@ const Players = (props) => {
     clearBothSquads()
   }, [])
 
+  const buttonClick = (e) => {
+    // console.log(e.target.innerHTML)
+    setSearchTerm(e.target.innerHTML)
+  }
+
 
   return (
     <div>
@@ -129,6 +136,15 @@ const Players = (props) => {
               {oponentSquad.length > 0 ? (<button onClick={() => clearOpponentSquad()}>Clear Opponent Squad</button>) : ('')}
             </div> */}
           </div>
+          <div className='query-controls'>
+            <button className='button query-button' onClick={(e) => buttonClick(e)}>Point Guards</button>
+            <button className='button query-button' onClick={(e) => buttonClick(e)}>Shooting Guards</button>
+            <button className='button query-button' onClick={(e) => buttonClick(e)}>Small Forwards</button>
+            <button className='button query-button' onClick={(e) => buttonClick(e)}>Power Forwards</button>
+            <button className='button query-button' onClick={(e) => buttonClick(e)}>Centers</button>
+            <button className='button query-button' onClick={(e) => buttonClick(e)}>All Players</button>
+          </div>
+          <input className='search-bar' type='text' placeholder='Search Players' onChange={(e) => setSearchTerm(e.target.value)}></input>
         </Header>
       </Sticky>
       {players.length === 0 ?
@@ -141,12 +157,59 @@ const Players = (props) => {
       }
       {/* <div className={userSquad.length === 0 ? 'landing-players' : userSquad.length > 0 && oponentSquad.length === 0 ? 'user-selection' : 'cpu-selection'}> */}
       <div className='landing-players'>
+
         <PlayersContainer>
-          {players.map(player => {
+
+          {players.filter((el) => {
+            if (searchTerm === '') {
+              return el
+            }
+            if (el.player_name.toLowerCase().includes(searchTerm.toLowerCase())) {
+              return el
+            }
+            if (searchTerm == 'Point Guards') {
+              if (el.position === 'Point Guard') {
+                return el
+              }
+            }
+            if (searchTerm == 'Shooting Guards') {
+              if (el.position === 'Shooting Guard') {
+                return el
+              }
+            }
+            if (searchTerm == 'Small Forwards') {
+              if (el.position === 'Small Forward') {
+                return el
+              }
+            }
+            if (searchTerm == 'Power Forwards') {
+              if (el.position === 'Power Forward') {
+                return el
+              }
+            }
+            if (searchTerm == 'Centers') {
+              if (el.position === 'Center') {
+                return el
+              }
+            }
+            if (searchTerm == 'All Players') {
+              return el
+            }
+          }).map(player => {
             return <Player player={player} key={player.player_id} userSquad={userSquad} setUserSquad={setUserSquad}
               oponentSquad={oponentSquad} setOponentSquad={setOponentSquad} />
           })}
+
+          {/* {players.map(player => {
+            return <Player player={player} key={player.player_id} userSquad={userSquad} setUserSquad={setUserSquad}
+              oponentSquad={oponentSquad} setOponentSquad={setOponentSquad} />
+          })} */}
+          {/* {players.map(player => {
+            return <Player player={player} key={player.player_id} userSquad={userSquad} setUserSquad={setUserSquad}
+              oponentSquad={oponentSquad} setOponentSquad={setOponentSquad} />
+          })} */}
         </PlayersContainer>
+
         <SelectedPlayers>
           {
             userSquad.length > 0 ? <CurrentSquad userSquad={userSquad} setUserSquad={setUserSquad}
