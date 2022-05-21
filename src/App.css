@@ -503,7 +503,7 @@ button:hover {
 
 @media(max-width: 445px) {
   .button-shrink {
-    font-size: .7rem;
+    font-size: .5rem;
   }
 
 }
