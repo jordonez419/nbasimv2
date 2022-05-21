@@ -137,12 +137,12 @@ const Players = (props) => {
             </div> */}
           </div>
           <div className='query-controls'>
-            <button className='button query-button' onClick={(e) => buttonClick(e)}>Point Guards</button>
-            <button className='button query-button' onClick={(e) => buttonClick(e)}>Shooting Guards</button>
-            <button className='button query-button' onClick={(e) => buttonClick(e)}>Small Forwards</button>
-            <button className='button query-button' onClick={(e) => buttonClick(e)}>Power Forwards</button>
-            <button className='button query-button' onClick={(e) => buttonClick(e)}>Centers</button>
-            <button className='button query-button' onClick={(e) => buttonClick(e)}>All Players</button>
+            <button className='button query-button button-shrink' onClick={(e) => buttonClick(e)}>Point Guards</button>
+            <button className='button query-button button-shrink' onClick={(e) => buttonClick(e)}>Shooting Guards</button>
+            <button className='button query-button button-shrink' onClick={(e) => buttonClick(e)}>Small Forwards</button>
+            <button className='button query-button button-shrink' onClick={(e) => buttonClick(e)}>Power Forwards</button>
+            <button className='button query-button button-shrink' onClick={(e) => buttonClick(e)}>Centers</button>
+            <button className='button query-button button-shrink' onClick={(e) => buttonClick(e)}>All Players</button>
           </div>
           <input className='search-bar' type='text' placeholder='Search Players' onChange={(e) => setSearchTerm(e.target.value)}></input>
         </Header>
