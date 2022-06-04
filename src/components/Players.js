@@ -10,13 +10,22 @@ import { AllPlayers } from './AllPlayers'
 const Players = (props) => {
 
 
-  const { players, userSquad, setUserSquad, setOponentSquad, oponentSquad, setMvp, setCpuScore, setUserScore, userScore, cpuScore } = props;
+  const { players, userSquad, setUserSquad, setOponentSquad, oponentSquad, setMvp, setCpuScore, setUserScore, userScore, cpuScore, isLoggedIn, setIsLoggedIn, formData } = props;
 
   const [searchTerm, setSearchTerm] = useState('')
+  const logOut = () => {
+    axios.get('https://nbasimulator.herokuapp.com/api/users/logout')
+      // .then((response) => response.data == 'logged out' ? setIsLoggedIn(false) : '')
+      .then((response) => console.log(response))
+      .catch(err => console.log(err.message))
+    setIsLoggedIn(false)
+    window.localStorage.removeItem('myCat')
+    navigate('/')
+  }
 
 
   const simulateGame = () => {
-    localStorage.clear()
+    // localStorage.clear()
     // Team 1 Simulation
     let counter = 0;
     let playersHash = {}
@@ -102,6 +111,15 @@ const Players = (props) => {
     setCpuScore({})
     setUserScore({})
   }
+  const deselectPlayer = (deselectedPlayer) => {
+    // console.log(`Deselecting player:${player.player_name}`)
+    setUserSquad(userSquad.filter(el => el.player_name !== deselectedPlayer))
+  }
+  const deselectOpponent = (deselectedPlayer) => {
+    // console.log(`Deselecting player:${player.player_name}`)
+    setOponentSquad(oponentSquad.filter(el => el.player_name !== deselectedPlayer))
+  }
+
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -111,6 +129,24 @@ const Players = (props) => {
   useEffect(() => {
     clearBothSquads()
   }, [])
+
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate('/')
+    }
+  }, [isLoggedIn, navigate])
+
+  useEffect(() => {
+    const cat = window.localStorage.getItem('myCat')
+    console.log(cat)
+    if (cat) {
+      setIsLoggedIn(true)
+    } else {
+      setIsLoggedIn(false)
+    }
+  }, [])
+
 
   const buttonClick = (e) => {
     // console.log(e.target.innerHTML)
@@ -122,6 +158,7 @@ const Players = (props) => {
     <div>
       <Sticky>
         <Header ><h1>{players.length === 0 ? 'Loading Players...' : 'Select Players'}</h1>
+          <button onClick={() => logOut()}>Log out</button>
           <div className='controls'>
             {/* {oponentSquad.length !== 5 ? (
               // <p >Click on Player to Select</p> 
@@ -130,7 +167,7 @@ const Players = (props) => {
               (
                 <button onClick={routeToSimulation}>Run Simulation</button>
               )} */}
-            {oponentSquad.length === 5 && userSquad.length === 5 ? <button className='button-shrink' onClick={routeToSimulation}>Run Simulation</button> : ''}
+
             {/* <div>
               {userSquad.length > 0 ? (<button onClick={() => clearSquad()}>Clear User Squad</button>) : ('')}
               {oponentSquad.length > 0 ? (<button onClick={() => clearOpponentSquad()}>Clear Opponent Squad</button>) : ('')}
@@ -145,8 +182,34 @@ const Players = (props) => {
             <button className='button query-button button-shrink' onClick={(e) => buttonClick(e)}>All Players</button>
           </div>
           <input className='search-bar' type='text' placeholder='Search Players' onChange={(e) => setSearchTerm(e.target.value)}></input>
+
+
         </Header>
+
       </Sticky>
+
+
+      {userSquad.length >= 1 || oponentSquad.length >= 1 ?
+        (
+          <div id='match-preview'>
+            <div>
+              {userSquad.length > 0 ? <h3>Team 1</h3> : ''}
+              {userSquad.length > 0 ? (<button className='button-shrink' onClick={() => clearSquad()}>Clear Roster</button>) : ('')}
+              {userSquad.map(el => <p className='player-name'>{el.player_name} <i class="fa fa-trash-o cursor-pointer" onClick={() => deselectPlayer(el.player_name)}></i></p>)}
+            </div>
+            {userSquad.length >= 1 && oponentSquad.length >= 1 ? <p>VS</p> : ''}
+            <div>
+              {oponentSquad.length > 0 ? <h3>Team 2</h3> : ''}
+              {oponentSquad.length > 0 ? (<button className='button-shrink' onClick={() => clearOpponentSquad()}>Clear Roster</button>) : ('')}
+              {oponentSquad.map(el => <p className='player-name'>{el.player_name} <i class="fa fa-trash-o cursor-pointer" onClick={() => deselectOpponent(el.player_name)}></i></p>)}
+            </div>
+            {oponentSquad.length === 5 && userSquad.length === 5 ? <button className='button-shrink run-sim-btn' onClick={routeToSimulation}>Run Simulation</button> : ''}
+
+          </div>
+        ) : ''
+      }
+
+
       {players.length === 0 ?
         <div class="ball">
           <div class="stroke pos1"></div>
@@ -200,17 +263,10 @@ const Players = (props) => {
               oponentSquad={oponentSquad} setOponentSquad={setOponentSquad} />
           })}
 
-          {/* {players.map(player => {
-            return <Player player={player} key={player.player_id} userSquad={userSquad} setUserSquad={setUserSquad}
-              oponentSquad={oponentSquad} setOponentSquad={setOponentSquad} />
-          })} */}
-          {/* {players.map(player => {
-            return <Player player={player} key={player.player_id} userSquad={userSquad} setUserSquad={setUserSquad}
-              oponentSquad={oponentSquad} setOponentSquad={setOponentSquad} />
-          })} */}
         </PlayersContainer>
 
-        <SelectedPlayers>
+
+        {/* <SelectedPlayers>
           {
             userSquad.length > 0 ? <CurrentSquad userSquad={userSquad} setUserSquad={setUserSquad}
               oponentSquad={oponentSquad} setOponentSquad={setOponentSquad} /> : ''
@@ -219,7 +275,7 @@ const Players = (props) => {
             <OponentSquad userSquad={userSquad} setUserSquad={setUserSquad}
               oponentSquad={oponentSquad} setOponentSquad={setOponentSquad} />
           ) : ('')}
-        </SelectedPlayers>
+        </SelectedPlayers> */}
       </div>
     </div>
   )
@@ -246,9 +302,9 @@ const SquadContainer = styled.div`
 border:1px solid black;
 `
 const SelectedPlayers = styled.div`
-margin-top:1rem;
+// margin-top:1rem;
 display:flex;
-flex-direction:row;
+flex-direction:column;
 `
 const Header = styled.div`
 font-size:3rem;

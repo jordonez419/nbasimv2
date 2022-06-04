@@ -178,6 +178,54 @@ body {
   font-size: 1.2rem;
 }
 
+.error {
+  color: red;
+  margin-top: .75rem;
+}
+
+.login-form {
+  margin: auto;
+  margin-top: 1rem;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: rgb(198, 207, 213, .8);
+  /* height: 5rem; */
+  width: 40%;
+  padding: 2rem;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: .75rem;
+}
+
+.display-block {
+  display: block;
+}
+
+.welcome {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.input {
+  border-radius: 5px;
+  margin-top: .5rem;
+}
+
+.register {
+  margin-top: 1rem;
+  width: 10.5rem;
+}
+
+.login-btn {
+  width: 10.5rem;
+}
+
 .player-img {
   width: 75%;
 }
@@ -193,6 +241,7 @@ body {
 
 .landing-img {
   width: 100%;
+  border-radius: 5px;
   /* display: none; */
 }
 
@@ -244,6 +293,26 @@ button:hover {
   background: linear-gradient(to left, rgb(201, 8, 42, .8) 50%, rgb(23, 64, 139, .8) 50%);
 }
 
+.player-name {
+  margin: 1rem;
+}
+
+#match-preview {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: .2rem;
+  background-color: rgb(198, 207, 213, .8);
+  border-radius: 1rem;
+  width: 44%;
+  margin: auto;
+  /* height: ; */
+  margin-top: .5rem;
+  color: black;
+}
+
 .remove {
   width: 50%;
   display: block;
@@ -254,7 +323,7 @@ button:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  /* align-items:center; */
+  align-items: center;
 }
 
 .user-selection {
@@ -457,6 +526,20 @@ button:hover {
 769px — 1024px: Small screens, laptops.
 1025px — 1200px: Desktops, large screens.
 1201px and more — Extra large screens, TV. */
+@media (max-width: 987px) {
+
+  #match-preview {
+    flex-direction: row;
+    align-items: space-around;
+    justify-content: space-around;
+    width: auto;
+    margin: auto;
+    /* height: ; */
+    margin-top: .5rem;
+
+  }
+
+}
 
 @media (max-width: 769px) {
   h3 {
@@ -484,12 +567,43 @@ button:hover {
   .player-img {
     width: 60%;
   }
+
+  #match-preview {
+    flex-direction: row;
+    align-items: space-around;
+    justify-content: space-around;
+    width: auto;
+    margin: auto;
+    /* height: ; */
+    margin-top: .5rem;
+
+  }
+
 }
 
 @media(max-width:595px) {
   .query-button {
     margin: auto;
     font-size: .6rem;
+  }
+
+  .landing-img {
+    display: none;
+  }
+
+  .login-form {
+    margin-top: 7rem;
+  }
+
+  #match-preview {
+    flex-direction: row;
+    align-items: space-around;
+    justify-content: space-around;
+    width: auto;
+    margin: auto;
+    /* height: ; */
+    margin-top: .5rem;
+
   }
 }
 
@@ -499,11 +613,49 @@ button:hover {
     flex-direction: column;
   }
 
+  .landing-img {
+    display: none;
+  }
+
+  .login-form {
+    margin-top: 7rem;
+  }
+
+  #match-preview {
+    flex-direction: row;
+    align-items: space-around;
+    justify-content: space-around;
+    width: auto;
+    margin: auto;
+    /* height: ; */
+    margin-top: .5rem;
+
+  }
+
 }
 
 @media(max-width: 445px) {
   .button-shrink {
     font-size: .5rem;
+  }
+
+  .landing-img {
+    display: none;
+  }
+
+  .login-form {
+    margin-top: 7rem;
+  }
+
+  #match-preview {
+    flex-direction: row;
+    align-items: space-around;
+    justify-content: space-around;
+    width: auto;
+    margin: auto;
+    /* height: ; */
+    margin-top: .5rem;
+
   }
 
 }
@@ -527,6 +679,25 @@ button:hover {
 
   p {
     font-size: .6rem;
+  }
+
+  .landing-img {
+    display: none;
+  }
+
+  .login-form {
+    margin-top: 7rem;
+  }
+
+  #match-preview {
+    flex-direction: row;
+    align-items: space-around;
+    justify-content: space-around;
+    width: auto;
+    margin: auto;
+    /* height: ; */
+    margin-top: .5rem;
+
   }
 }
 
@@ -562,6 +733,25 @@ button:hover {
 
   .team2-final {
     max-width: 50%;
+  }
+
+  .landing-img {
+    display: none;
+  }
+
+  .login-form {
+    margin-top: 7rem;
+  }
+
+  #match-preview {
+    flex-direction: row;
+    align-items: space-around;
+    justify-content: space-around;
+    width: auto;
+    margin: auto;
+    /* height: ; */
+    margin-top: .5rem;
+
   }
 }
 

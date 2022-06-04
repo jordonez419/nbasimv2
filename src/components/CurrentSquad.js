@@ -26,7 +26,6 @@ export default CurrentSquad
 
 const Container = styled.div`
 position: sticky;
-top:75px;
 border:1px solid black;
 border-radius:1rem;
 background-color:rgb(23, 64, 139,.8);

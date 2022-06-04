@@ -8,7 +8,7 @@ import { AllPlayers } from './AllPlayers'
 
 const SimulationPage = (props) => {
 
-    const { userSquad, oponentSquad, setUserSquad, setOponentSquad, players, cpuScore, userScore, setUserScore, setCpuScore, mvp, renderMvp } = props
+    const { userSquad, oponentSquad, setUserSquad, setOponentSquad, players, cpuScore, userScore, setUserScore, setCpuScore, mvp, renderMvp, isLoggedIn } = props
 
     const navigate = useNavigate()
     const routeToPlayers = () => {
@@ -47,6 +47,12 @@ const SimulationPage = (props) => {
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
+    useEffect(() => {
+        if (!isLoggedIn) {
+            navigate('/')
+        }
+    }, [])
+
 
     return (
         <div>
