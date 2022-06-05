@@ -587,9 +587,9 @@ button:hover {
     font-size: .6rem;
   }
 
-  .landing-img {
+  /* .landing-img {
     display: none;
-  }
+  } */
 
   .login-form {
     margin-top: 7rem;
@@ -613,9 +613,9 @@ button:hover {
     flex-direction: column;
   }
 
-  .landing-img {
+  /* .landing-img {
     display: none;
-  }
+  } */
 
   .login-form {
     margin-top: 7rem;
@@ -639,9 +639,9 @@ button:hover {
     font-size: .5rem;
   }
 
-  .landing-img {
+  /* .landing-img {
     display: none;
-  }
+  } */
 
   .login-form {
     margin-top: 7rem;
@@ -681,9 +681,9 @@ button:hover {
     font-size: .6rem;
   }
 
-  .landing-img {
+  /* .landing-img {
     display: none;
-  }
+  } */
 
   .login-form {
     margin-top: 7rem;
@@ -735,9 +735,9 @@ button:hover {
     max-width: 50%;
   }
 
-  .landing-img {
+  /* .landing-img {
     display: none;
-  }
+  } */
 
   .login-form {
     margin-top: 7rem;
