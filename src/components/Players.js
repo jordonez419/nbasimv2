@@ -139,7 +139,7 @@ const Players = (props) => {
 
   useEffect(() => {
     const cat = window.localStorage.getItem('myCat')
-    console.log(cat)
+    // console.log(cat)
     if (cat) {
       setIsLoggedIn(true)
     } else {
