@@ -25,6 +25,8 @@ const Players = (props) => {
 
 
   const simulateGame = () => {
+
+
     // localStorage.clear()
     // Team 1 Simulation
     let counter = 0;
@@ -91,10 +93,14 @@ const Players = (props) => {
     // console.log(userScore)
   }
 
+
   const navigate = useNavigate()
   const routeToSimulation = () => {
-    navigate('/simulation')
-    simulateGame()
+    if (userSquad.length === 5 && oponentSquad.length === 5) {
+      simulateGame()
+      navigate('/simulation')
+    }
+
   }
 
   const clearSquad = () => {
@@ -127,7 +133,11 @@ const Players = (props) => {
 
 
   useEffect(() => {
-    clearBothSquads()
+    setUserSquad([])
+    setOponentSquad([])
+    setMvp([])
+    setCpuScore({})
+    setUserScore({})
   }, [])
 
 
@@ -157,8 +167,9 @@ const Players = (props) => {
   return (
     <div>
       <Sticky>
-        <Header ><h1>{players.length === 0 ? 'Loading Players...' : 'Select Players'}</h1>
-          <button onClick={() => logOut()}>Log out</button>
+        <Header ><h1>{players.length === 0 ? 'Loading Players...' : 'Select 5 Players for each team'}</h1>
+          <button className='button-shrink' onClick={() => logOut()}>Log out</button>
+          <button className='button-shrink run-sim-btn' onClick={routeToSimulation}>Run Simulation</button>
           <div className='controls'>
             {/* {oponentSquad.length !== 5 ? (
               // <p >Click on Player to Select</p> 
@@ -203,7 +214,7 @@ const Players = (props) => {
               {oponentSquad.length > 0 ? (<button className='button-shrink' onClick={() => clearOpponentSquad()}>Clear Roster</button>) : ('')}
               {oponentSquad.map(el => <p className='player-name'>{el.player_name} <i class="fa fa-trash-o cursor-pointer" onClick={() => deselectOpponent(el.player_name)}></i></p>)}
             </div>
-            {oponentSquad.length === 5 && userSquad.length === 5 ? <button className='button-shrink run-sim-btn' onClick={routeToSimulation}>Run Simulation</button> : ''}
+            {/* {oponentSquad.length === 5 && userSquad.length === 5 ? <button className='button-shrink run-sim-btn' onClick={routeToSimulation}>Run Simulation</button> : ''} */}
 
           </div>
         ) : ''

@@ -84,6 +84,7 @@ const Home = (props) => {
             <div className='login-form'>
                 {/* <Container> */}
                 <h1 className='welcome'>Welcome to Nba Simulator Pro</h1>
+                <p>Simulate 5 on 5 games between NBA All-Stars!</p>
                 <img alt='landing' className='landing-img' src='https://ideastream-production.s3.amazonaws.com/images/news/npr/2020/01/799778886_291475704.jpg?null'></img>
                 <form className='form-inputs'>
                     <input name='user_name' className='input' type='text' placeholder='Enter Username' onChange={handleChange} value={formData.name}></input>

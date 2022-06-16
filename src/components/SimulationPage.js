@@ -12,10 +12,14 @@ const SimulationPage = (props) => {
 
     const navigate = useNavigate()
     const routeToPlayers = () => {
-        navigate('/')
         setUserSquad([])
         setOponentSquad([])
+        window.localStorage.removeItem('user')
+        window.localStorage.removeItem('oponent')
+        window.localStorage.removeItem('user-score')
+        window.localStorage.removeItem('cpu-score')
         // localStorage.clear()
+        navigate('/players')
     }
 
 

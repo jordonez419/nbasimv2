@@ -178,6 +178,11 @@ body {
   font-size: 1.2rem;
 }
 
+.run-sim-btn {
+  margin: 0 2rem;
+
+}
+
 .error {
   color: red;
   margin-top: .75rem;
@@ -191,7 +196,7 @@ body {
   border-radius: 15px;
   background-color: rgb(198, 207, 213, .8);
   /* height: 5rem; */
-  width: 40%;
+  width: 37%;
   padding: 2rem;
 }
 
