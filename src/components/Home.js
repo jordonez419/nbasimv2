@@ -44,7 +44,7 @@ const Home = (props) => {
                 .then(res => res.data.command == 'INSERT' ? setIsLoggedIn(true) : '')
                 .catch(err => setError(err.message))
             setFormData(initialFormData)
-            if (isLoggedIn) {
+            if (!error) {
                 alert('Sign up Successful! Try logging in')
             }
             // navigate('/players')
