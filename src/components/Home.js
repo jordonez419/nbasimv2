@@ -68,6 +68,12 @@ const Home = (props) => {
 
     }
 
+    const guest = () => {
+        // alert('Welcome!')
+        window.localStorage.setItem('myCat', 'Tom')
+        setIsLoggedIn(true)
+    }
+
     const resetPlayers = () => {
         setUserSquad([]);
         setOponentSquad([])
@@ -97,6 +103,9 @@ const Home = (props) => {
                 </div>
                 <div>
                     <button className='block register' onClick={() => register()}>Sign Up</button>
+                </div>
+                <div>
+                    <button className='block register' onClick={() => guest()}>Play as Guest</button>
                 </div>
 
                 {error.length > 0 ? error == 'Request failed with status code 401' ? <p className='error'>Invalid Username or Password</p> :

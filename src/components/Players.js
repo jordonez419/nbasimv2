@@ -90,7 +90,11 @@ const Players = (props) => {
 
     setUserScore(playersHash)
     setCpuScore(playersHash2)
-    // console.log(userScore)
+
+    // window.localStorage.setItem('user', (JSON.stringify(userSquad)))
+    // window.localStorage.setItem('oponent', (JSON.stringify(oponentSquad)))
+    // window.localStorage.setItem('user-score', (JSON.stringify(userScore)))
+    // window.localStorage.setItem('cpu-score', (JSON.stringify(cpuScore)))
   }
 
 

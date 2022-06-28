@@ -12,7 +12,7 @@ const Player = (props) => {
 
     const selectPlayer = (star) => {
         if (userSquad.length >= 4 && oponentSquad.length === 5) {
-            window.scrollTo(0, 0)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         if (userSquad.includes(star)) {
             alert(`${star.player_name} already selected on Team 1!`)
@@ -27,7 +27,7 @@ const Player = (props) => {
 
     const selectOpponent = (star) => {
         if (userSquad.length === 5 && oponentSquad.length >= 4) {
-            window.scrollTo(0, 0)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         if (oponentSquad.includes(star)) {
             alert(`${star.player_name} already selected on Team 2!`)

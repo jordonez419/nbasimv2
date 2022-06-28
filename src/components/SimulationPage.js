@@ -23,38 +23,43 @@ const SimulationPage = (props) => {
     }
 
 
-    useEffect(() => {
-        if (localStorage.getItem('user')) {
-            setUserSquad(JSON.parse(localStorage.getItem('user')))
-        }
-        if (localStorage.getItem('oponent')) {
-            setOponentSquad(JSON.parse(localStorage.getItem('oponent')))
-        }
-        if (localStorage.getItem('user-score')) {
-            setUserScore(JSON.parse(localStorage.getItem('user-score')))
-        }
-        if (localStorage.getItem('cpu-score')) {
-            setCpuScore(JSON.parse(localStorage.getItem('cpu-score')))
-        }
-        // if (userSquad.length === 0 || oponentSquad.length === 0) {
-        //     routeToPlayers()
-        // }
-    }, [])
+    // useEffect(() => {
+    //     window.localStorage.setItem('user', (JSON.stringify(userSquad)))
+    //     window.localStorage.setItem('oponent', (JSON.stringify(oponentSquad)))
+    //     window.localStorage.setItem('user-score', (JSON.stringify(userScore)))
+    //     window.localStorage.setItem('cpu-score', (JSON.stringify(cpuScore)))
+    // })
 
-    useEffect(() => {
-        window.localStorage.setItem('user', (JSON.stringify(userSquad)))
-        window.localStorage.setItem('oponent', (JSON.stringify(oponentSquad)))
-        window.localStorage.setItem('user-score', (JSON.stringify(userScore)))
-        window.localStorage.setItem('cpu-score', (JSON.stringify(cpuScore)))
-    })
+
+    // useEffect(() => {
+    //     if (localStorage.getItem('user')) {
+    //         setUserSquad(JSON.parse(localStorage.getItem('user')))
+    //     }
+    //     if (localStorage.getItem('oponent')) {
+    //         setOponentSquad(JSON.parse(localStorage.getItem('oponent')))
+    //     }
+    //     if (localStorage.getItem('user-score')) {
+    //         setUserScore(JSON.parse(localStorage.getItem('user-score')))
+    //     }
+    //     if (localStorage.getItem('cpu-score')) {
+    //         setCpuScore(JSON.parse(localStorage.getItem('cpu-score')))
+    //     }
+    //     // if (userSquad.length === 0 || oponentSquad.length === 0) {
+    //     //     routeToPlayers()
+    //     // }
+    // }, [])
+
 
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
     useEffect(() => {
-        if (!isLoggedIn) {
-            navigate('/')
+        if (userSquad < 5 || oponentSquad < 5) {
+            navigate('/players')
         }
+        // if (!isLoggedIn) {
+        //     navigate('/')
+        // }
     }, [])
 
 
