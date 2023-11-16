@@ -93,19 +93,19 @@ const Home = (props) => {
                 {/* <Container> */}
                 <h1 className='welcome'>Welcome to Nba Simulator Pro</h1>
                 <p>Simulate 5 on 5 games between NBA All-Stars!</p>
-                <img alt='landing' className='landing-img' src='https://ideastream-production.s3.amazonaws.com/images/news/npr/2020/01/799778886_291475704.jpg?null'></img>
-                <form className='form-inputs'>
+                <img alt='landing' className='landing-img' src='https://www.raptorsrepublic.com/wp-content/uploads/2015/12/2d00947a1b6faeea04a24715a7eff36b-getty-101007645md017_nba_finals_g.jpg'></img>
+                {/* <form className='form-inputs'>
                     <input name='user_name' className='input' type='text' placeholder='Enter Username' onChange={handleChange} value={formData.name}></input>
                     <input name='password' className='input' type='password' placeholder='Enter Password' onChange={handleChange} value={formData.password}></input>
-                </form>
-                <div>
+                </form> */}
+                {/* <div>
                     <button className='block login-btn' onClick={() => logIn()}>Log in</button>
                 </div>
                 <div>
                     <button className='block register' onClick={() => register()}>Sign Up</button>
-                </div>
+                </div> */}
                 <div>
-                    <button className='block register' onClick={() => guest()}>Play as Guest</button>
+                    <button className='block register' onClick={() => guest()}>Play</button>
                 </div>
 
                 {error.length > 0 ? error == 'Request failed with status code 401' ? <p className='error'>Invalid Username or Password</p> :

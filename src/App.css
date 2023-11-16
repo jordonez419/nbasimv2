@@ -173,7 +173,7 @@ table {
 
 /*  */
 body {
-  background: url('https://source.unsplash.com/UegcSdRtmlg/1950x1200') no-repeat center center fixed;
+  background: url('https://source.unsplash.com/XmYSlYrupL8/1950x1200') no-repeat center center fixed;
   font-family: 'Lalezar', cursive;
   font-size: 1.2rem;
 }
@@ -245,7 +245,8 @@ body {
 }
 
 .landing-img {
-  width: 100%;
+  width: 40%;
+  height: 350px;
   border-radius: 5px;
   /* display: none; */
 }

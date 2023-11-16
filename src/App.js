@@ -3,9 +3,10 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import Home from './components/Home';
 import Players from './components/Players';
+import {AllPlayers} from './components/AllPlayers'
 import SimulationPage from './components/SimulationPage';
 import { Navigate, Route, Routes, Switch } from 'react-router-dom';
-import { AllPlayers } from './components/AllPlayers'
+// import AllPlayersList  from './components/AllPlayers'
 import Register from './components/Register';
 import LogIn from './components/LogIn';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -42,9 +43,10 @@ function App() {
 
   }
   useEffect(() => {
-    axios.get('https://nbasimulator.herokuapp.com/api/players/')
-      .then((response) => setPlayers(response.data))
-      .catch(err => console.log(err.message))
+    setPlayers(AllPlayers)
+    // axios.get('https://nbasimulator.herokuapp.com/api/players/')
+    //   .then((response) => setPlayers(response.data))
+    //   .catch(err => console.log(err.message))
   }, [])
   // useEffect(() => {
   //   if (isLoggedIn) {
