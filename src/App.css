@@ -8,8 +8,8 @@
 
 .cursor-pointer:hover {
   cursor: pointer;
-  color: #FDBC2D;
-  transition: 250ms ease-out
+  color: #fdbc2d;
+  transition: 250ms ease-out;
 }
 
 .display {
@@ -173,19 +173,19 @@ table {
 
 /*  */
 body {
-  background: url('https://source.unsplash.com/XmYSlYrupL8/1950x1200') no-repeat center center fixed;
+  background: url('../public//basketballcourt.avif') no-repeat center center
+    fixed;
   font-family: 'Lalezar', cursive;
   font-size: 1.2rem;
 }
 
 .run-sim-btn {
   margin: 0 2rem;
-
 }
 
 .error {
   color: red;
-  margin-top: .75rem;
+  margin-top: 0.75rem;
 }
 
 .login-form {
@@ -194,7 +194,7 @@ body {
   text-align: center;
   border: 2px solid black;
   border-radius: 15px;
-  background-color: rgb(198, 207, 213, .8);
+  background-color: rgb(198, 207, 213, 0.8);
   /* height: 5rem; */
   width: 32%;
   padding: 2rem;
@@ -205,7 +205,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: .75rem;
+  margin: 0.75rem;
 }
 
 .display-block {
@@ -219,7 +219,7 @@ body {
 
 .input {
   border-radius: 5px;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .register {
@@ -258,18 +258,18 @@ body {
 }
 
 .query-button {
-  margin: .5rem 1rem;
+  margin: 0.5rem 1rem;
 }
 
 button {
   /* width: 100%; */
   max-width: 100%;
   color: black;
-  background-color: #FDBC2D;
+  background-color: #fdbc2d;
   border-radius: 5px;
   font-family: 'Lalezar', cursive;
   font-size: 1rem;
-  transition: 250ms ease-out
+  transition: 250ms ease-out;
 }
 
 button:hover {
@@ -284,19 +284,23 @@ button:hover {
 
 .player-default-color {
   /* background-color: rgb(128,128,128,0.5); */
-  background-color: rgb(198, 207, 213, .8);
+  background-color: rgb(198, 207, 213, 0.8);
 }
 
 .player-selected {
-  background-color: rgb(23, 64, 139, .8);
+  background-color: rgb(23, 64, 139, 0.8);
 }
 
 .opponent-selected {
-  background-color: rgb(201, 8, 42, .8);
+  background-color: rgb(201, 8, 42, 0.8);
 }
 
 .dual-selection {
-  background: linear-gradient(to left, rgb(201, 8, 42, .8) 50%, rgb(23, 64, 139, .8) 50%);
+  background: linear-gradient(
+    to left,
+    rgb(201, 8, 42, 0.8) 50%,
+    rgb(23, 64, 139, 0.8) 50%
+  );
 }
 
 .player-name {
@@ -309,13 +313,13 @@ button:hover {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: .2rem;
-  background-color: rgb(198, 207, 213, .8);
+  padding: 0.2rem;
+  background-color: rgb(198, 207, 213, 0.8);
   border-radius: 1rem;
   width: 44%;
   margin: auto;
   /* height: ; */
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   color: black;
 }
 
@@ -355,13 +359,13 @@ button:hover {
 .team1-final {
   border: 1px solid black;
   border-radius: 1rem;
-  background-color: rgb(23, 64, 139, .8);
+  background-color: rgb(23, 64, 139, 0.8);
 }
 
 .team2-final {
   border: 1px solid black;
   border-radius: 1rem;
-  background-color: rgb(201, 8, 42, .8);
+  background-color: rgb(201, 8, 42, 0.8);
 }
 
 /* .final-score{
@@ -394,7 +398,7 @@ button:hover {
 }
 
 .push-down {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 /* .mvp-img{
@@ -420,7 +424,7 @@ button:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  font-family: "Montserrat", "Arial";
+  font-family: 'Montserrat', 'Arial';
   color: white;
   /* background-color: rgb(23, 64, 139,.8); */
   /* margin-top: 2rem; */
@@ -431,16 +435,15 @@ button:hover {
   top: 0;
 }
 
-.scoreboard>* {
+.scoreboard > * {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   border-right: 1px solid white;
   height: 50px;
   font-weight: bold;
-
 }
 
-.scoreboard>*:first-child {
+.scoreboard > *:first-child {
   border-left: 1px solid white;
 }
 
@@ -491,13 +494,13 @@ button:hover {
   flex-direction: row;
 }
 
-.timer-container>* {
+.timer-container > * {
   border-right: 1px solid white;
   padding: 0em 1em;
   color: white;
 }
 
-.timer-container>*:last-child {
+.timer-container > *:last-child {
   border-right: 0;
   color: yellow;
 }
@@ -524,7 +527,6 @@ button:hover {
   background-color: crimson;
 }
 
-
 /* Responsiveness */
 
 /* 320px — 480px: Mobile devices.
@@ -533,7 +535,6 @@ button:hover {
 1025px — 1200px: Desktops, large screens.
 1201px and more — Extra large screens, TV. */
 @media (max-width: 987px) {
-
   #match-preview {
     flex-direction: row;
     align-items: space-around;
@@ -541,19 +542,17 @@ button:hover {
     width: auto;
     margin: auto;
     /* height: ; */
-    margin-top: .5rem;
-
+    margin-top: 0.5rem;
   }
-
 }
 
 @media (max-width: 769px) {
   h3 {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   .button-shrink {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   /* .query-button {
@@ -561,9 +560,8 @@ button:hover {
     font-size: .5rem;
   } */
 
-
   .title {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 
   .ply-name {
@@ -581,16 +579,14 @@ button:hover {
     width: auto;
     margin: auto;
     /* height: ; */
-    margin-top: .5rem;
-
+    margin-top: 0.5rem;
   }
-
 }
 
-@media(max-width:595px) {
+@media (max-width: 595px) {
   .query-button {
     margin: auto;
-    font-size: .6rem;
+    font-size: 0.6rem;
   }
 
   /* .landing-img {
@@ -608,13 +604,11 @@ button:hover {
     width: auto;
     margin: auto;
     /* height: ; */
-    margin-top: .5rem;
-
+    margin-top: 0.5rem;
   }
 }
 
-
-@media(max-width:460px) {
+@media (max-width: 460px) {
   .scoreboard {
     flex-direction: column;
   }
@@ -634,15 +628,13 @@ button:hover {
     width: auto;
     margin: auto;
     /* height: ; */
-    margin-top: .5rem;
-
+    margin-top: 0.5rem;
   }
-
 }
 
-@media(max-width: 445px) {
+@media (max-width: 445px) {
   .button-shrink {
-    font-size: .5rem;
+    font-size: 0.5rem;
   }
 
   /* .landing-img {
@@ -660,15 +652,13 @@ button:hover {
     width: auto;
     margin: auto;
     /* height: ; */
-    margin-top: .5rem;
-
+    margin-top: 0.5rem;
   }
-
 }
 
-@media(max-width: 423px) {
+@media (max-width: 423px) {
   .button-shrink {
-    font-size: .5rem;
+    font-size: 0.5rem;
   }
 
   /* .query-button {
@@ -676,7 +666,7 @@ button:hover {
   } */
 
   h3 {
-    font-size: .55rem;
+    font-size: 0.55rem;
   }
 
   h1 {
@@ -684,7 +674,7 @@ button:hover {
   }
 
   p {
-    font-size: .6rem;
+    font-size: 0.6rem;
   }
 
   /* .landing-img {
@@ -702,12 +692,11 @@ button:hover {
     width: auto;
     margin: auto;
     /* height: ; */
-    margin-top: .5rem;
-
+    margin-top: 0.5rem;
   }
 }
 
-@media(max-width:320px) {
+@media (max-width: 320px) {
   .scoreboard {
     flex-direction: column;
   }
@@ -717,7 +706,7 @@ button:hover {
   } */
 
   h3 {
-    font-size: .53rem;
+    font-size: 0.53rem;
   }
 
   h1 {
@@ -725,11 +714,11 @@ button:hover {
   }
 
   p {
-    font-size: .6rem;
+    font-size: 0.6rem;
   }
 
   .button-shrink {
-    font-size: .6rem;
+    font-size: 0.6rem;
     max-width: 80%;
   }
 
@@ -756,15 +745,13 @@ button:hover {
     width: auto;
     margin: auto;
     /* height: ; */
-    margin-top: .5rem;
-
+    margin-top: 0.5rem;
   }
 }
 
-@media(max-width:681px) {
-
+@media (max-width: 681px) {
   .rematch {
-    font-size: .85rem;
+    font-size: 0.85rem;
   }
 
   .ply-name {
@@ -772,13 +759,13 @@ button:hover {
   }
 
   .stats {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 }
 
-@media (max-width:611px) {
+@media (max-width: 611px) {
   .scoreboard {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 
   /* h3{
@@ -791,13 +778,13 @@ button:hover {
     font-size: .6rem;
   } */
   .title {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }
 
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .scoreboard {
-    font-size: .65rem;
+    font-size: 0.65rem;
   }
 
   /* .sim-container{
@@ -827,7 +814,7 @@ button:hover {
   animation-name: bounce;
   animation-duration: 1s;
   animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+  animation-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
   margin: auto;
 }
 
@@ -838,7 +825,6 @@ button:hover {
   height: 150px;
   border-radius: 80px;
   border: 2px solid black;
-
 }
 
 .stroke2 {
@@ -847,24 +833,21 @@ button:hover {
   width: 300px;
   height: 300px;
   border-radius: 150px;
-
 }
 
 .pos1 {
   right: 60px;
   bottom: -25px;
-
 }
 
 .pos2 {
   left: 60px;
   bottom: -25px;
-
 }
 
 .pos3 {
   top: -100px;
-  left: 48px
+  left: 48px;
 }
 
 .pos4 {
@@ -873,7 +856,8 @@ button:hover {
 }
 
 @keyframes bounce {
-  0% {}
+  0% {
+  }
 
   10% {
     transform: scaleX(1);
